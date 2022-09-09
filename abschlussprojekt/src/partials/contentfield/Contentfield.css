@@ -1,0 +1,18 @@
+.p-contentfield__createtask {
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 9999px;
+    height: 60px;
+    width: 60px;
+    opacity: 0.7;
+    transition: all 500ms;
+}
+.p-contentfield__createtask img {
+    height: 100%;
+    width: 100%;
+}
+.p-contentfield__createtask:hover {
+    opacity: 1;
+}

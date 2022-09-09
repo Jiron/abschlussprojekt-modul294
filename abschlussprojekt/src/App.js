@@ -1,8 +1,17 @@
 import './App.css';
+import Header from './partials/header/Header';
+import Contentfield from './partials/contentfield/Contentfield';
+import Sideboard from './partials/sideboard/Sideboard';
 
 function App() {
   return (
-    <h1>e</h1>
+    <div>
+      <Header />
+      <div class="app-content">
+        <Sideboard />
+        <Contentfield />
+      </div>
+    </div>
   );
 }
 

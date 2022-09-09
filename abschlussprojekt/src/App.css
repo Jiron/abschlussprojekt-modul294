@@ -1,0 +1,4 @@
+.app-content {
+    display: flex;
+    min-height: calc(100vh - 90px);
+}
