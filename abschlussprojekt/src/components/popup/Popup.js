@@ -1,7 +1,8 @@
 import './Popup.css';
 
 function Popup() {
-    function closePopup() {
+    function closePopup(e) {
+        if(e.target.id != "popup") return;
         let popup = document.getElementById('popup');
         if(!popup) return;
         popup.style.display = 'none';
@@ -21,8 +22,8 @@ function Popup() {
     });
 
   return (
-    <div id="popup" onClick={() => closePopup()} class="c-popup">
-        <div onClick={(e) => e.preventDefault()} class="c-popup__div">
+    <div id="popup" onMouseDown={(e) => closePopup(e)} class="c-popup">
+        <div id="popupDiv" class="c-popup__div">
             <div id="popupContent">
 
             </div>

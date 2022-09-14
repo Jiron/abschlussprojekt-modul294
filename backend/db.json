@@ -1,8 +1,45 @@
 {
   "users": [
-    { "id": "abcd", "username": "hey", "passwort": "1234" }
+    {
+      "id": "abcd",
+      "username": "hey",
+      "passwort": "1234"
+    }
   ],
   "tasks": [
-    { "userid": "abcd", "name": "e", "state": "open"}
+    {
+      "id": 1,
+      "text": "ergERG",
+      "description": "ergergaer",
+      "state": "doing"
+    },
+    {
+      "id": 3,
+      "text": "rgrgr",
+      "description": "grgrgrg",
+      "state": "doing",
+      "createdAt": 1663159777960
+    },
+    {
+      "id": 4,
+      "text": "4tt4",
+      "description": "4t4t4t",
+      "state": "doing",
+      "createdAt": 1663159826886
+    },
+    {
+      "id": 5,
+      "text": "efef",
+      "description": "efefef",
+      "state": "doing",
+      "createdAt": 1663159846163
+    },
+    {
+      "id": 6,
+      "text": "EGRH",
+      "description": "ehath",
+      "state": "doing",
+      "createdAt": 1663161753214
+    }
   ]
 }

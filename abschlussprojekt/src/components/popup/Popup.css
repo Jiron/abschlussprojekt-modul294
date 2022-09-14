@@ -10,11 +10,48 @@
 .c-popup__div {
     border-radius: 10px;
     background-color: #2c2f33;
-    height: 400px;
-    width: 600px;
+    padding: 40px;
+    min-width: 500px;
     position: absolute;
     left: 50%;
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+}
+
+#popupContent h3 {
+    font-size: 30px;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+#popupContent input, #popupContent textarea, #popupContent button {
+    border-radius: 10px;
+    font-size: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #2c2f33;
+    border: #2196f3 solid;
+    opacity: 0.3;
+}
+#popupContent input:focus,
+#popupContent textarea:focus,
+#popupContent input:valid,
+#popupContent textarea:valid {
+    outline: none;
+    opacity: 1;
+}
+#popupContent input {
+    height: 30px;
+}
+#popupContent textarea {
+    resize: none;
+}
+#popupContent button {
+    padding: 10px 30px;
+    opacity: 1;
+}
+#popupContent button:hover {
+    background-color: rgba(33,150,243, 0.2);
 }
