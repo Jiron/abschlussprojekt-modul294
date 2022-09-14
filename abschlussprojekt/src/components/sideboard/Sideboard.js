@@ -15,6 +15,7 @@ function Sideboard() {
           <span>Coming Soon</span>
         </div>
       </a>
+      <p class="p-sideboard__copyright">&copy; Copyright - {new Date().getFullYear()} Hallo</p>
     </div>
   );
 }

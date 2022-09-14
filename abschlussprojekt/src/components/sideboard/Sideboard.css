@@ -3,6 +3,7 @@
     padding: 20px;
     width: 260px;
     background-color: #2c2f33;
+    position: relative;
 }
 .p-sideboard a {
     text-decoration: none;
@@ -29,4 +30,11 @@
 }
 .p-sideboard__item__a--active .p-sideboard__item {
     background-color: #23272a;
+}
+.p-sideboard__copyright {
+    position: absolute;
+    bottom: 10px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
 }

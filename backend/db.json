@@ -1,0 +1,8 @@
+{
+  "users": [
+    { "id": "abcd", "username": "hey", "passwort": "1234" }
+  ],
+  "tasks": [
+    { "userid": "abcd", "name": "e", "state": "open"}
+  ]
+}
