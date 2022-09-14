@@ -1,37 +1,37 @@
-.p-sideboard {
+.c-sideboard {
     height: auto;
     padding: 20px;
     width: 260px;
     background-color: #2c2f33;
     position: relative;
 }
-.p-sideboard a {
+.c-sideboard a {
     text-decoration: none;
     color: inherit;
 }
-.p-sideboard__item {
+.c-sideboard__item {
     display: flex;
     border-radius: 10px;
     padding: 16px 20px;
     transition: all 500ms;
     margin-top: 10px;
 }
-.p-sideboard__item:hover {
+.c-sideboard__item:hover {
     background-color: #23272a;
 }
-.p-sideboard__item img {
+.c-sideboard__item img {
     height: 25px;
     width: auto;
 }
-.p-sideboard__item span {
+.c-sideboard__item span {
     padding-left: 10px;
     font-size: 20px;
     align-self: center;
 }
-.p-sideboard__item__a--active .p-sideboard__item {
+.c-sideboard__item__a--active .c-sideboard__item {
     background-color: #23272a;
 }
-.p-sideboard__copyright {
+.c-sideboard__copyright {
     position: absolute;
     bottom: 10px;
     left: 0px;

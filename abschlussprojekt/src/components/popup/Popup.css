@@ -1,0 +1,20 @@
+.c-popup {
+    position: absolute;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+}
+
+.c-popup__div {
+    border-radius: 10px;
+    background-color: #2c2f33;
+    height: 400px;
+    width: 600px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}

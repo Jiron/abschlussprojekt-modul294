@@ -1,3 +1,7 @@
+.p-contentfield {
+    padding: 20px;
+}
+
 .p-contentfield__createtask {
     cursor: pointer;
     position: fixed;

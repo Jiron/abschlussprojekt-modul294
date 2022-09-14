@@ -1,0 +1,25 @@
+.c-tasks {
+
+}
+
+.c-tasks__task span {
+    font-size: 22px;
+    padding-left: 38px;
+}
+.c-tasks__task img {
+    position: absolute;
+    height: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.c-tasks__task {
+    position: relative;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    width: calc(100vw - 400px);
+    background-color: rgba(44, 47, 51, 0.5);
+}
+.c-tasks__task:hover {
+    background-color: rgba(44, 47, 51, 0.8);
+}
