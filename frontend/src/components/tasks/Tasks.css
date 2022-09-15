@@ -1,7 +1,10 @@
 .c-tasks__task span {
+    display: block;
     font-size: 22px;
     padding-left: 38px;
     pointer-events: none;
+    width: calc(100vw - 510px);
+    word-break: break-all;
 }
 .c-tasks__task img {
     position: absolute;
@@ -12,13 +15,12 @@
 .c-tasks__task {
     position: relative;
     padding: 30px;
-    margin-bottom: 20px;
     border-radius: 10px;
     width: calc(100vw - 400px);
-    background-color: rgba(44, 47, 51, 0.5);
+    background-color: #373a3e;
 }
 .c-tasks__task:hover {
-    background-color: rgba(44, 47, 51, 0.8);
+    background-color: #313336;
 }
 .c-tasks__task__state {
     pointer-events: none;
@@ -28,4 +30,14 @@
 }
 .c-tasks__task__edit {
     right: 60px;
+}
+.c-tasks__taskdescription {
+    border-radius: 0px 0px 10px 10px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    padding: 20px;
+    padding-top: 30px;
+    background-color: #282b30;
+    width: calc(100vw - 380px);
+    word-break: break-all;
 }
