@@ -18,10 +18,10 @@ function Contentfield() {
     popup.style.display = 'block';
 
     document.getElementById('createTaskPopup').addEventListener('submit', async (evt) => {
+      evt.preventDefault();
       fetch('http://localhost:3000/tasks')
         .then((response) => response.json())
         .then((data) => {
-            evt.preventDefault();
             let createTaskPopup = document.getElementById('createTaskPopup');
             let task = {
               id: data.length == 0 ? 1 : data[data.length - 1].id + 1,
