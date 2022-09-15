@@ -76,7 +76,7 @@ function Header() {
       .then((user) => {
         sessionStorage.setItem('token', user.accessToken);
         console.log(user);
-        // window.location.href = "/"
+        window.location.href = "/";
       });
     });
   }
