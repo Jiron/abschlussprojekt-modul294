@@ -10,6 +10,8 @@ function Tasks() {
         <img class="c-tasks__task__edit js-edit" taskid="${tasks.id}" src="/edit.png" />
         <img class="c-tasks__task__delete js-delete" taskid="${tasks.id}" src="/delete.png" />
       </div>
+      <div>
+      </div> 
     `
   }
 
