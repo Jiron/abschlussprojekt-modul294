@@ -3,7 +3,7 @@ import './Header.css';
 function Header() {
   function logout() {
     sessionStorage.clear();
-    window.location.href = "/";
+    window.location.reload();
   }
 
   function openRegisterPopup() {
@@ -48,7 +48,7 @@ function Header() {
           sessionStorage.setItem('token', data.accessToken);
           sessionStorage.setItem('userId', data.user.id);
           sessionStorage.setItem('username', data.user.username);
-          window.location.href = "/";
+          window.location.reload();
         }
         else {
           document.getElementById('popupError').innerHTML = data;
@@ -96,7 +96,7 @@ function Header() {
           sessionStorage.setItem('token', data.accessToken);
           sessionStorage.setItem('userId', data.user.id);
           sessionStorage.setItem('username', data.user.username);
-          window.location.href = "/";
+          window.location.reload();
         }
         else {
           document.getElementById('popupError').innerHTML = data;

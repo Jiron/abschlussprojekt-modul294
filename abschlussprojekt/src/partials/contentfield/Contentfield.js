@@ -42,7 +42,7 @@ function Contentfield() {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${sessionStorage.getItem('token')}`
               },
-            }).then(() => window.location.href = "/")
+            }).then(() => window.location.reload())
           });
         });
   };

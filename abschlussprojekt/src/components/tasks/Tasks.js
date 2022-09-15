@@ -38,7 +38,7 @@ function Tasks() {
               'Content-Type': 'application/json',
               'Authorization': `Bearer ${sessionStorage.getItem('token')}`
             },
-          }).then(() => window.location.href = "/");
+          }).then(() => window.location.reload());
         });
         DOMTasks[i].getElementsByClassName('js-delete')[0].addEventListener('click', (evt) => {
           let taskID = evt.srcElement.getAttribute('taskid') || evt.target.getAttribute('taskid');
@@ -48,7 +48,7 @@ function Tasks() {
               'Content-Type': 'application/json',
               'Authorization': `Bearer ${sessionStorage.getItem('token')}`
             },
-          }).then(() => window.location.href = "/")
+          }).then(() => window.location.reload())
         });
         DOMTasks[i].getElementsByClassName('js-edit')[0].addEventListener('click', (evt) => {
           let taskID = evt.srcElement.getAttribute('taskid') || evt.target.getAttribute('taskid');
@@ -98,7 +98,7 @@ function Tasks() {
                   'Content-Type': 'application/json',
                   'Authorization': `Bearer ${sessionStorage.getItem('token')}`
                 },
-              }).then(() => window.location.href = "/");
+              }).then(() => window.location.reload());
             });
           });
         });
