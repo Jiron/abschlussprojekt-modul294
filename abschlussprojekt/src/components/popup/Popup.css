@@ -59,3 +59,10 @@
 #popupContent button:hover {
     background-color: rgba(33,150,243, 0.2);
 }
+#popupContent p {
+    color: red;
+    font-size: 18px;
+    line-height: 1.0;
+    margin-bottom: 10px;
+    text-align: center;
+}

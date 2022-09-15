@@ -30,7 +30,6 @@ function Contentfield() {
         .then((data) => {
             let createTaskPopup = document.getElementById('createTaskPopup');
             let task = {
-              id: data.length == 0 ? 1 : data[data.length - 1].id + 1,
               text: createTaskPopup.querySelector('#textInput').value,
               description: createTaskPopup.querySelector('#descriptionInput').value,
               state: "doing"

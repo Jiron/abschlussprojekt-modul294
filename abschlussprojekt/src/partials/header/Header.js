@@ -15,6 +15,7 @@ function Header() {
         <input id="emailInput" name="emailInput" type="email" placeholder="E-Mail" required>
         <label for="passwordInput">Password</input>
         <input id="passwordInput" name="passwordInput" type="password" placeholder="Password" required>
+        <p id="popupError"></p>
         <button id="submit" type="submit">Create</button>
       </form>
     `;
@@ -36,7 +37,17 @@ function Header() {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${sessionStorage.getItem('token')}`
         },
-      }).then(() => window.location.href = "/")
+      }).then((response) => response.json())
+      .then((data) => {
+        if(data.accessToken) {
+          sessionStorage.setItem('token', data.accessToken);
+          sessionStorage.setItem('userId', data.user.id);
+          window.location.href = "/";
+        }
+        else {
+          document.getElementById('popupError').innerHTML = data;
+        }
+      });
     });
   }
 
@@ -46,23 +57,24 @@ function Header() {
     if(!popup) return;
     if(!popupContent) return;
     popupContent.innerHTML = `
-      <form id="createUserPopup">
+      <form id="logInPopUp">
         <h3>Login</h3>
         <label for="emailInput">E-Mail</input>
         <input id="emailInput" name="emailInput" type="email" placeholder="E-Mail" required>
         <label for="passwordInput">Password</input>
         <input id="passwordInput" name="passwordInput" type="password" placeholder="Password" required>
+        <p id="popupError"></p>
         <button id="submit" type="submit">Login</button>
       </form>
     `;
     popup.style.display = 'block';
 
-    document.getElementById('createUserPopup').addEventListener('submit', async (evt) => {
+    document.getElementById('logInPopUp').addEventListener('submit', async (evt) => {
       evt.preventDefault();
-      let createUserPopup = document.getElementById('createUserPopup');
+      let logInPopUp = document.getElementById('logInPopUp');
       let user = {
-        email: createUserPopup.querySelector('#emailInput').value,
-        password: createUserPopup.querySelector('#passwordInput').value
+        email: logInPopUp.querySelector('#emailInput').value,
+        password: logInPopUp.querySelector('#passwordInput').value
       }
       
       fetch('http://localhost:3000/login', {
@@ -73,10 +85,15 @@ function Header() {
           'Authorization': `Bearer`
         },
       }).then((response) => response.json())
-      .then((user) => {
-        sessionStorage.setItem('token', user.accessToken);
-        console.log(user);
-        window.location.href = "/";
+      .then((data) => {
+        if(data.accessToken) {
+          sessionStorage.setItem('token', data.accessToken);
+          sessionStorage.setItem('userId', data.user.id);
+          window.location.href = "/";
+        }
+        else {
+          document.getElementById('popupError').innerHTML = data;
+        }
       });
     });
   }

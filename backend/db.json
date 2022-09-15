@@ -13,35 +13,55 @@
       "username": "Hoi",
       "createdAt": 1663234714421,
       "id": 2
+    },
+    {
+      "email": "test@test.co",
+      "password": "$2a$10$iaQEf/Ata9VmUTgsDcvbk.D42TXtHB/vIgxyQaQXSU.DCWPvTXx16",
+      "username": "test@test.com",
+      "createdAt": 1663241235840,
+      "id": 3
+    },
+    {
+      "email": "test@testt.com",
+      "password": "$2a$10$gP2d2pBXMaiqfI/etiu97elm83IUr5qsTnnGBaxX89n4v4j4wNfxC",
+      "username": "passwordisttest",
+      "createdAt": 1663241671186,
+      "id": 4
+    },
+    {
+      "email": "hallo@coma.cum",
+      "password": "$2a$10$t8AA7IjAY93.WOcUwL1Cwu4UfYeZb8GC4DMgKbUYciEf5mYQUUzfW",
+      "username": "tetet",
+      "createdAt": 1663243199177,
+      "id": 5
     }
   ],
   "tasks": [
     {
-      "id": 2,
-      "text": "efefeee",
-      "description": "efefef",
-      "state": "doing",
-      "createdAt": 1663227031023,
-      "editedAt": 1663237219392,
-      "userId": 1
-    },
-    {
-      "id": 3,
+      "id": 1,
       "text": "efef",
-      "description": "test",
+      "description": "testr4rehnfdytrsgwrsf",
       "state": "doing",
-      "createdAt": 1663238061558,
-      "userId": "2",
-      "editedAt": 1663238290017
+      "createdAt": 1663241952474,
+      "editedAt": 1663243179695,
+      "userId": 2
     },
     {
-      "id": 4,
-      "text": "test",
-      "description": "hallo",
+      "text": "etet",
+      "description": "etetet",
       "state": "doing",
-      "createdAt": 1663238085558,
-      "userId": 2,
-      "editedAt": 1663238288065
+      "createdAt": 1663243123983,
+      "userId": 4,
+      "id": 2,
+      "editedAt": 1663243127931
+    },
+    {
+      "text": "erer",
+      "description": "erer",
+      "state": "doing",
+      "createdAt": 1663243211330,
+      "userId": 5,
+      "id": 3
     }
   ]
 }
