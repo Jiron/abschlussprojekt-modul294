@@ -1,24 +1,28 @@
 {
   "users": [
     {
-      "id": "abcd",
-      "username": "hey",
-      "passwort": "1234"
+      "email": "hallo@sugoma.com",
+      "password": "$2a$10$N0UAR1cgGF8S3Tp6xSPaguKFRHepQAqWsm7dzhFSL2slFPq.4RbP2",
+      "username": "eterer",
+      "createdAt": 1663228784059,
+      "id": 1
+    },
+    {
+      "email": "test@test.com",
+      "password": "$2a$10$iyCAn7cJcYOKa4a78Ua.W.zktTqEraWl/IIBODgQv9/voK7JIrNNW",
+      "username": "Hoi",
+      "createdAt": 1663234714421,
+      "id": 2
     }
   ],
   "tasks": [
     {
       "id": 1,
-      "text": "SIGHBKRG",
-      "description": "jhrgkBRG",
-      "state": "done",
-      "createdAt": 1663222420802
-    },
-    {
-      "id": 2,
-      "text": "4q5erdfxwrrw",
-      "description": "gergeqrgqergerqdvarethatng",
-      "state": "doing"
+      "text": "efef",
+      "description": "efefef",
+      "state": "doing",
+      "createdAt": 1663227031023,
+      "editedAt": 1663231481315
     }
   ]
 }

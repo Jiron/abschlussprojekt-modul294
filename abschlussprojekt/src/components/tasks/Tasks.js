@@ -14,7 +14,12 @@ function Tasks() {
   }
 
   window.onload = function() {
-    fetch('http://localhost:3000/tasks').then(async response => {
+    fetch('http://localhost:3000/tasks', {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+      },
+    }).then(async response => {
       let tasks = await response.json();
       document.getElementById('taskOverview').innerHTML = `${tasks.map(taskTemplate).join('')}`;
     
@@ -30,7 +35,8 @@ function Tasks() {
             method: 'PUT',
             body: JSON.stringify(task),
             headers: {
-              'Content-Type': 'application/json'
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${sessionStorage.getItem('token')}`
             },
           }).then(() => window.location.href = "/");
         });
@@ -39,7 +45,8 @@ function Tasks() {
           fetch(`http://localhost:3000/tasks/${taskID}`, {
             method: 'DELETE',
             headers: {
-              'Content-Type': 'application/json'
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${sessionStorage.getItem('token')}`
             },
           }).then(() => window.location.href = "/")
         });
@@ -54,7 +61,9 @@ function Tasks() {
           popupContent.innerHTML = `
             <form taskid="${taskID}" id="editTaskPopup">
               <h3>Edit Task ID: ${taskID}</h3>
+              <label for="textInput">Text</input>
               <input id="textInput" name="textInput" type="text" placeholder="Name" value="${task.text}" required>
+              <label for="descriptionInput">Description</input>
               <textarea id="descriptionInput" name="descriptionInput" rows="4" cols="50" placeholder="Description" required>${task.description}</textarea>
               <button id="submit" type="submit">Edit</button>
             </form>
@@ -63,9 +72,13 @@ function Tasks() {
 
           document.getElementById('editTaskPopup').addEventListener('submit', async (evt) => {
             evt.preventDefault();
-            fetch('http://localhost:3000/tasks')
-              .then((response) => response.json())
-              .then((tasks) => {
+            fetch('http://localhost:3000/tasks', {
+                method: 'GET',
+                headers: {
+                  'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+                },
+            }).then((response) => response.json())
+            .then((tasks) => {
                   let taskID = evt.srcElement.getAttribute('taskid') || evt.target.getAttribute('taskid');
                   console.log(evt.srcElement);
                   console.log(tasks.filter(x => x.id == taskID)[0])
@@ -74,16 +87,18 @@ function Tasks() {
                     id: task.id,
                     text: editTaskPopup.querySelector('#textInput').value,
                     description: editTaskPopup.querySelector('#descriptionInput').value,
-                    state: task.state
+                    state: task.state,
+                    createdAt: task.createdAt
                   }
                   
                   fetch(`http://localhost:3000/tasks/${taskID}`, {
                     method: 'PUT',
                     body: JSON.stringify(taskEdited),
                     headers: {
-                      'Content-Type': 'application/json'
+                      'Content-Type': 'application/json',
+                      'Authorization': `Bearer ${sessionStorage.getItem('token')}`
                     },
-                  }).then(() => window.location.href = "/")
+                  }).then(() => window.location.href = "/");
                 });
               });
         });

@@ -21,3 +21,24 @@
     margin: 0;
     align-self: center;
 }
+
+.p-header__login, .p-header__register  {
+    position: absolute;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: #2196f3 solid;
+    transition: all 300ms;
+}
+
+.p-header__login {
+    background-color: #282b30;
+    right: 120px;
+}
+.p-header__register {
+    background-color: #2196f3;
+    right: 0px;
+}
+.p-header__login:hover, .p-header__register:hover {
+    background-color: rgba(33, 150, 243, 0.5);
+}

@@ -25,7 +25,11 @@
     margin: 0;
     margin-bottom: 20px;
 }
-
+#popupContent label {
+    color: white;
+    font-size: 26px;
+    line-height: 1.7;
+}
 #popupContent input, #popupContent textarea, #popupContent button {
     border-radius: 10px;
     font-size: 20px;

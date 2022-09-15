@@ -1,6 +1,9 @@
 {
   "dependencies": {
-    "json-server": "^0.17.0",
     "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "json-server": "^0.17.0",
+    "json-server-auth": "^2.1.0"
   }
 }

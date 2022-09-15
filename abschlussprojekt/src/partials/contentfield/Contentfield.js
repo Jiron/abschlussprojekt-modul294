@@ -10,7 +10,9 @@ function Contentfield() {
     popupContent.innerHTML = `
       <form id="createTaskPopup">
         <h3>Create Task</h3>
-        <input id="textInput" name="textInput" type="text" placeholder="Name" required>
+        <label for="textInput">Text</label>
+        <input id="textInput" name="textInput" type="text" placeholder="Text" required>
+        <label for="descriptionInput">Description</label>
         <textarea id="descriptionInput" name="descriptionInput" rows="4" cols="50" placeholder="Description" required></textarea>
         <button id="submit" type="submit">Create</button>
       </form>
@@ -19,8 +21,12 @@ function Contentfield() {
 
     document.getElementById('createTaskPopup').addEventListener('submit', async (evt) => {
       evt.preventDefault();
-      fetch('http://localhost:3000/tasks')
-        .then((response) => response.json())
+      fetch('http://localhost:3000/tasks', {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+          },
+        }).then((response) => response.json())
         .then((data) => {
             let createTaskPopup = document.getElementById('createTaskPopup');
             let task = {
@@ -34,7 +40,8 @@ function Contentfield() {
               method: 'POST',
               body: JSON.stringify(task),
               headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${sessionStorage.getItem('token')}`
               },
             }).then(() => window.location.href = "/")
           });
