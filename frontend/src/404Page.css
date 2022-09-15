@@ -1,0 +1,15 @@
+.c-404page {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+}
+.c-404page h1 {
+    font-size: 6vw;
+}
+
+.c-404page a {
+    font-size: 3vw;
+}
