@@ -106,7 +106,7 @@ function Header() {
   }
 
   setTimeout(() => {
-    if(sessionStorage.getItem('token') && sessionStorage.getItem('username')) {
+    if(sessionStorage.getItem('token') && sessionStorage.getItem('username')  && sessionStorage.getItem('userId')) {
       document.getElementById('welcome').innerHTML = `Welcome back ${sessionStorage.getItem('username')}!`;
       document.getElementById('login').style.display = "none";
       document.getElementById('register').style.display = "none";

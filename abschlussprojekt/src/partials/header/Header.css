@@ -47,3 +47,10 @@
 .p-header__login:hover, .p-header__switchaccounts:hover, .p-header__register:hover, .p-header__logout:hover {
     background-color: rgba(33, 150, 243, 0.5);
 }
+.p-header__welcome {
+    padding: 14px 0px;
+    margin: 0;
+    font-size: 20px;
+    width: calc(100vw - 495px);
+    text-align: end;
+}
