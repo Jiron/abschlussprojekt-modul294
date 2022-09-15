@@ -1,6 +1,11 @@
 import './Header.css';
 
 function Header() {
+  function logout() {
+    sessionStorage.clear();
+    window.location.href = "/";
+  }
+
   function openRegisterPopup() {
     let popup = document.getElementById('popup');
     let popupContent = document.getElementById('popupContent');
@@ -42,6 +47,7 @@ function Header() {
         if(data.accessToken) {
           sessionStorage.setItem('token', data.accessToken);
           sessionStorage.setItem('userId', data.user.id);
+          sessionStorage.setItem('username', data.user.username);
           window.location.href = "/";
         }
         else {
@@ -51,14 +57,14 @@ function Header() {
     });
   }
 
-  function openLoginPopup() {
+  function openLoginPopup(title) {
     let popup = document.getElementById('popup');
     let popupContent = document.getElementById('popupContent');
     if(!popup) return;
     if(!popupContent) return;
     popupContent.innerHTML = `
       <form id="logInPopUp">
-        <h3>Login</h3>
+        <h3>${title}</h3>
         <label for="emailInput">E-Mail</input>
         <input id="emailInput" name="emailInput" type="email" placeholder="E-Mail" required>
         <label for="passwordInput">Password</input>
@@ -89,22 +95,40 @@ function Header() {
         if(data.accessToken) {
           sessionStorage.setItem('token', data.accessToken);
           sessionStorage.setItem('userId', data.user.id);
+          sessionStorage.setItem('username', data.user.username);
           window.location.href = "/";
         }
         else {
           document.getElementById('popupError').innerHTML = data;
         }
       });
-    });
+    });  
   }
+
+  setTimeout(() => {
+    if(sessionStorage.getItem('token') && sessionStorage.getItem('username')) {
+      document.getElementById('welcome').innerHTML = `Welcome back ${sessionStorage.getItem('username')}!`;
+      document.getElementById('login').style.display = "none";
+      document.getElementById('register').style.display = "none";
+      document.getElementById('register').style.display = "none";
+    }
+    else {
+      document.getElementById('welcome').style.display = "none";
+      document.getElementById('switchAccounts').style.display = "none";
+      document.getElementById('logout').style.display = "none";
+    }
+  });
 
   return (
     <header class="p-header">
         <div class="p-header__content">
             <img class="p-header__icon" src="/icon-gray.png" />
             <h2 class="p-header__title">ToDo-List</h2>
-            <button onClick={() => openLoginPopup()} id="login" class="p-header__login">Login</button>
-            <button onClick={() => openRegisterPopup()} class="p-header__register">Register</button>
+            <h4 id="welcome" class="p-header__welcome"></h4>
+            <button onClick={() => openLoginPopup("Login")} id="login" class="p-header__login">Login</button>
+            <button onClick={() => openRegisterPopup()} id="register" class="p-header__register">Register</button>
+            <button onClick={() => openLoginPopup("Switch Accounts")} id="switchAccounts" class="p-header__switchaccounts">Switch Accounts</button>
+            <button onClick={() => logout()} id="logout" class="p-header__logout">Logout</button>
         </div>
     </header>
   );

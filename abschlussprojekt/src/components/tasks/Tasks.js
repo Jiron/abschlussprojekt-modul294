@@ -79,28 +79,28 @@ function Tasks() {
                 },
             }).then((response) => response.json())
             .then((tasks) => {
-                  let taskID = evt.srcElement.getAttribute('taskid') || evt.target.getAttribute('taskid');
-                  console.log(evt.srcElement);
-                  console.log(tasks.filter(x => x.id == taskID)[0])
-                  let editTaskPopup = document.getElementById('editTaskPopup');
-                  let taskEdited = {
-                    id: task.id,
-                    text: editTaskPopup.querySelector('#textInput').value,
-                    description: editTaskPopup.querySelector('#descriptionInput').value,
-                    state: task.state,
-                    createdAt: task.createdAt
-                  }
-                  
-                  fetch(`http://localhost:3000/tasks/${taskID}`, {
-                    method: 'PUT',
-                    body: JSON.stringify(taskEdited),
-                    headers: {
-                      'Content-Type': 'application/json',
-                      'Authorization': `Bearer ${sessionStorage.getItem('token')}`
-                    },
-                  }).then(() => window.location.href = "/");
-                });
-              });
+              let taskID = evt.srcElement.getAttribute('taskid') || evt.target.getAttribute('taskid');
+              console.log(evt.srcElement);
+              console.log(tasks.filter(x => x.id == taskID)[0])
+              let editTaskPopup = document.getElementById('editTaskPopup');
+              let taskEdited = {
+                id: task.id,
+                text: editTaskPopup.querySelector('#textInput').value,
+                description: editTaskPopup.querySelector('#descriptionInput').value,
+                state: task.state,
+                createdAt: task.createdAt
+              }
+              
+              fetch(`http://localhost:3000/tasks/${taskID}`, {
+                method: 'PUT',
+                body: JSON.stringify(taskEdited),
+                headers: {
+                  'Content-Type': 'application/json',
+                  'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+                },
+              }).then(() => window.location.href = "/");
+            });
+          });
         });
       }
     });

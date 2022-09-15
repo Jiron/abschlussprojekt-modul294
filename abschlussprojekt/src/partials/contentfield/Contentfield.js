@@ -47,11 +47,17 @@ function Contentfield() {
         });
   };
 
+  setTimeout(() => {
+    if(!sessionStorage.getItem('token') || !sessionStorage.getItem('username') || !sessionStorage.getItem('userId')) {
+      document.getElementById('createTask').style.display = "none";
+    }
+  });
+
   return (
     <div class="p-contentfield">
       <Tasks />
       <div class="p-contentfield__createtask">
-        <img src="plus.png" onClick={() => openPopup()}/>
+        <img id="createTask" src="plus.png" onClick={() => openPopup()}/>
       </div>
     </div>
   );

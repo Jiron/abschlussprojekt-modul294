@@ -22,7 +22,7 @@
     align-self: center;
 }
 
-.p-header__login, .p-header__register  {
+.p-header__login, .p-header__register, .p-header__switchaccounts, .p-header__logout {
     position: absolute;
     font-size: 16px;
     padding: 10px 20px;
@@ -31,14 +31,19 @@
     transition: all 300ms;
 }
 
-.p-header__login {
+.p-header__login, .p-header__switchaccounts {
     background-color: #282b30;
+}
+.p-header__login {
     right: 120px;
 }
-.p-header__register {
+.p-header__switchaccounts {
+    right: 105px;
+}
+.p-header__register, .p-header__logout {
     background-color: #2196f3;
     right: 0px;
 }
-.p-header__login:hover, .p-header__register:hover {
+.p-header__login:hover, .p-header__switchaccounts:hover, .p-header__register:hover, .p-header__logout:hover {
     background-color: rgba(33, 150, 243, 0.5);
 }
